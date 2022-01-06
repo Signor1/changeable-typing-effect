@@ -1,0 +1,151 @@
+:root{
+  --background-color: #212121;
+  --font: sans-serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: var(--background-color);
+  font-family: var(--font);
+}
+.image1, .image2{
+  width: 150px;
+  height: 170px;
+  position: absolute;
+}
+.image2{
+  right: 0px;
+  position: absolute;
+  top: 0px;
+}
+.body{
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+}
+.welcome{
+  text-align: center;
+  position: relative;
+  color: #ffff;
+  font-weight: bolder;
+  font-size: 100px;
+  letter-spacing: 0.5em;
+  filter: brightness(120%);
+}
+.welcome span{
+  animation: change 2s linear infinite;
+  animation-delay: calc(0.33s * var(--delay));
+}
+@keyframes change {
+  20%{color: #fff; }
+  40%{color: #fff; }
+  60%{color: orange; font-size: 120px; }
+  80%{color: #fff; }
+  100%{color: #fff; }
+}
+.box{
+   position: absolute;
+   left: 38%;
+   top: 25%;
+}
+.to,.kodex{
+  text-align: center;
+  color: #ffff;
+  letter-spacing: 0.15em;
+  font-weight: bolder;
+  font-size: 70px;
+  margin-top: 25px;
+}
+.kodex{
+  letter-spacing: 0.17em;
+  position: relative;
+  font-size: 90px;
+  -webkit-box-reflect: below -40px linear-gradient(transparent, #0004);
+}
+.kodex span{
+   background-color: orange;
+   border-radius: 50%;
+   padding: 0px 30px;
+   margin-right: 10px;
+   animation: shine 4s linear infinite;
+}
+@keyframes shine{
+  from{box-shadow: 0px 0px 4px orange; filter: brightness(100%);}
+  to{box-shadow: 0px 0px 100px orange; filter: brightness(150%);}
+}
+.code{
+  color: #fff;
+  font-family:sans-serif;
+  font-size: 60px;
+  position: absolute;
+  font-weight: bold;
+  transform:scaleY(1.7);
+  left: 87px;
+  top: 148px;
+}
+h1{
+  margin-top: 10px;
+}
+.typing{
+  color: #fff;
+  overflow: hidden;
+  border-right: 0.15em solid orange;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+  animation: typing 8s steps(40, end) infinite,
+              cursor-blink 0.75s step-end infinite;
+}
+@keyframes typing{
+  from{width:0;}
+  to{width: 100%;}
+}
+
+@keyframes cursor-blink{
+  from,
+  to{
+    border-color: transparent;
+  }
+  50%{
+    border-color: orange;
+  }
+}
+.container-img{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  overflow: hidden;
+  width: 90%;
+}
+.img-display{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-100%);
+  animation: run 30s linear infinite;
+
+}
+.img-display img{
+  width: 150px;
+  height: 80px;
+  margin: 0px 30px 0px 30px;
+  position: relative;
+  animation: move 2s linear infinite;
+  animation-delay: calc(0.09s * var(--wait));
+}
+@keyframes run{
+  from{transform: translateX(-100%);}
+  to{transform: translateX(100%);}
+}
+@keyframes move{
+  0%{bottom: 15px;}
+  25%{bottom: 0px;}
+  50%{bottom: 15px;}
+  75%{bottom: 0px;}
+  100%{bottom: 15px;}
+}
